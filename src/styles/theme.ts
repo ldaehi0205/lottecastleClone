@@ -7,8 +7,8 @@ export const theme = {
   browny: '#292929',
   gray: '#E9E9E9',
   darkBlack: '#2F2F2F',
-  brown: '#B7956E',
-  deepBrown: '#B97334',
-  lightBrown: '#C0A388',
+  brown: '#b7956e',
+  deepBrown: '#b97334',
+  lightBrown: '#c0a388',
   typo: FONT_SIZE,
 } as const;
