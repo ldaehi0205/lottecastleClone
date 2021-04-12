@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-
+// 유니언타입
 type TJustifyContent =
   | 'flex-start'
   | 'flex-end'
