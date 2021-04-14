@@ -1,0 +1,93 @@
+{
+  "content0": {
+    "intro": {
+      "image": "http://demer.lottecastle.co.kr/m/resources/img/main/m_intro_img.jpg"
+    },
+    "video": {
+      "image": "http://demer.lottecastle.co.kr/m/resources/img/main/m_visual.jpg",
+      "link": "https://player.vimeo.com/video/513232881?api=1&title=0&byline=0&portrait=0&autoplay=1&loop=1"
+    }
+  },
+  "content1": {
+    "background": "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_bg.jpg",
+    "title": "http://demer.lottecastle.co.kr/m/resources/img/main/m_tit_bay.png",
+    "slide_images": [
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_1.png",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_2.png",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_3.png",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_4.png",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_5.png",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_bay_6.png"
+    ]
+  },
+  "content2": {
+    "background": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_bg.jpg",
+    "slide_images": [
+      {
+        "title": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_txt1.png",
+        "video": {
+          "link": "https://player.vimeo.com/video/513232803?api=1&title=0&byline=0&portrait=0&autoplay=1&loop=1",
+          "image": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_img1.jpg"
+        }
+      },
+      {
+        "title": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_txt2.png",
+        "video": {
+          "link": "https://player.vimeo.com/video/513232751?api=1&title=0&byline=0&portrait=0&autoplay=1&loop=1",
+          "image": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_img2.jpg"
+        }
+      },
+      {
+        "title": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_txt3.png",
+        "video": {
+          "link": "https://player.vimeo.com/video/513232713?api=1&title=0&byline=0&portrait=0&autoplay=1&loop=1",
+          "image": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_img3.jpg"
+        }
+      },
+      {
+        "title": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_txt4.png",
+        "video": {
+          "link": "https://player.vimeo.com/video/513706494?api=1&title=0&byline=0&portrait=0&autoplay=1&loop=1",
+          "image": "http://demer.lottecastle.co.kr/m/resources/img/main/m_film_img4.jpg"
+        }
+      }
+    ]
+  },
+  "content3": {
+    "title": "http://demer.lottecastle.co.kr/m/resources/img/main/m_tit_gal.png",
+    "thumb_list": [
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_thumb1.jpg",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_thumb2.jpg",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_thumb3.jpg",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_thumb4.jpg",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_thumb5.jpg",
+      "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_thumb6.jpg"
+    ],
+    "slide_images": [
+      {
+        "slide_img": "http://demer.lottecastle.co.kr/m/resources/img/main/gal_view_1.jpg",
+        "slide_txt": "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_txt1.jpg"
+      },
+      {
+        "slide_img": "http://demer.lottecastle.co.kr/m/resources/img/main/gal_view_2.jpg",
+        "slide_txt": "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_txt2.jpg"
+      },
+      {
+        "slide_img": "http://demer.lottecastle.co.kr/m/resources/img/main/gal_view_3.jpg",
+        "slide_txt": "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_txt3.jpg"
+      },
+      {
+        "slide_img": "http://demer.lottecastle.co.kr/m/resources/img/main/gal_view_4.jpg",
+        "slide_txt": "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_txt4.jpg"
+      },
+      {
+        "slide_img": "http://demer.lottecastle.co.kr/m/resources/img/main/gal_view_5.jpg",
+        "slide_txt": "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_txt5.jpg"
+      },
+      {
+        "slide_img": "http://demer.lottecastle.co.kr/m/resources/img/main/gal_view_6.jpg",
+        "slide_txt": "http://demer.lottecastle.co.kr/m/resources/img/main/m_gal_txt6.jpg"
+      }
+    ]
+  }
+}
