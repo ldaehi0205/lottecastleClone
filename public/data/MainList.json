@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "images": [
+        "http://demer.lottecastle.co.kr/m/resources/img/m_logo.jpg",
+        "https://postfiles.pstatic.net/MjAyMTA0MTNfMjIy/MDAxNjE4MzEwOTM3ODEz.KB2oG2cOxI47aXNvilLhtYYRE5DLamYMNvsFQImVgS8g.Q018ar_l1nA9a3jvN7LquOAycw5FOLvKvy7ONNQ-7qQg.PNG.maplesosser/call.png?type=w966",
+        "https://postfiles.pstatic.net/MjAyMTA0MTNfOTIg/MDAxNjE4MzEwOTMyNjg0.ZLMmzw5uz2m-Eoo3OXX19t7NgajGfcls4uU6hRFs04kg.teP73VeXJ6BvG9WvOzYgjpqk_8ZP8hHEqP0_GEWaiMYg.PNG.maplesosser/hambug.png?type=w966"
+      ]
+    },
+    {
+      "id": 1,
+      "title": "summary",
+      "text": "사업안내",
+      "subText": [
+        "사업개요",
+        "입지환경",
+        "위치안내영상",
+        "홍보영상",
+        "오시는길"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "architecture",
+      "text": "설계안내",
+      "subText": ["단지배치도", "단지안내 영상", "동,호수표", "커뮤니티"]
+    },
+    {
+      "id": 3,
+      "title": "space",
+      "text": "공간안내",
+      "subText": ["평면정보", "세대투어 영상", "VR"]
+    },
+    {
+      "id": 4,
+      "title": "sales info",
+      "text": "분양안내",
+      "subText": [
+        "청약 및 계약일정",
+        "청양가이드 영상",
+        "분양가안내",
+        "분양공고"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "invitation",
+      "text": "관심고객등록"
+    }
+  ]
+}
