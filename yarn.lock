@@ -11392,9 +11392,6 @@ unique-string@^1.0.0:
   dependencies:
     crypto-random-string "^1.0.0"
 
-<<<<<<< HEAD
-universalify@^0.1.0, universalify@^0.1.2:
-=======
 universal-cookie@^4.0.0:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/universal-cookie/-/universal-cookie-4.0.4.tgz#06e8b3625bf9af049569ef97109b4bb226ad798d"
@@ -11404,7 +11401,6 @@ universal-cookie@^4.0.0:
     cookie "^0.4.0"
 
 universalify@^0.1.0:
->>>>>>> 06ab7a0 ([18기 정승옥]ADD: 코드 리팩토링, 팝업기능 구현)
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/universalify/-/universalify-0.1.2.tgz#b646f69be3942dabcecc9d6639c80dc105efaa66"
   integrity sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==
