@@ -1,7 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Main } from '~/components';
 import Nav from '~/components/nav/nav';
+import detailPage from './components/detail/detailPage';
+import Main from './components/Main/Main';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Switch>
         <Route exact path='/'></Route>
         <Route exact path='/main' component={Main}></Route>
+        <Route exact path='/detailPage' component={detailPage}></Route>
       </Switch>
     </>
   );

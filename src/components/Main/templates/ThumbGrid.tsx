@@ -1,17 +1,13 @@
 import React, { createContext, useContext, useState } from 'react';
 import styled from 'styled-components';
 import { DefaultImage } from '~/components/common';
-
-interface IThumb {
-  thumb_list: string[];
-}
-type IThumbIndex = number | null;
+import { IThumb } from '~/components/Main/MainInterface';
 
 export const ThumbContext = createContext(null);
 
 export const ThumbProvider: React.FC = ({ children }) => {
-  const [thumbIndex, setThumbIndex] = useState<IThumbIndex>(null);
-  const handleThumbIndex = (index: null | number) => {
+  const [thumbIndex, setThumbIndex] = useState<number | null>(null);
+  const handleThumbIndex = (index: number | null) => {
     setThumbIndex(index);
   };
 
@@ -35,7 +31,7 @@ export const ThumbGrid: React.FC<IThumb> = ({ thumb_list }) => {
   const { action } = Thumb;
   return (
     <GridBox>
-      {thumb_list.map((list: string, index: number) => (
+      {thumb_list.map((list, index) => (
         <GridItem
           key={index}
           onClick={() => {
