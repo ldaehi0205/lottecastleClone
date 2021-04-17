@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "type": "imgcarousel",
     "titletop": "사업개요",
     "titlebottom": "SUMMARY",
     "header": "새로운 부산항에 수평선을 세우다",
@@ -18,6 +19,7 @@
 
   {
     "id": 1,
+    "type": "imgsummary",
     "titletop": "입지환경",
     "titlebottom": "SUMMARY",
     "header": "부산을 넘어 대한민국의 새로운 오션리치벨트를 완성합니다.",
@@ -36,64 +38,99 @@
     "contenttitle6": "환승센터",
     "contentsub6": "부산역과 국제여객터미널 연계 공간(대중교통 환승 시설 등)",
     "contenttitle7": "마리나시설",
-    "contentsub7": "해양레저,문화체험 공간(계류시설, 해양레저시설 등)"
+    "contentsub7": "해양레저,문화체험 공간(계류시설, 해양레저시설 등)",
+    "text": "※ 상기 이미지는 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.",
+    "text1": "※ 본 홈페이지의 이미지, CG, 내용, 일러스트 등은 소비자의 이해를 돕기 위한 것으로 실제와 다를 수 있습니다.",
+    "text2": "※ 하자 등에 따른 소비자 피해보상은 공동주택관리법 시행령 제36조 제1항 등 관련법령에 따라 적용됩니다."
   },
 
   {
     "id": 2,
+    "type": "video",
     "titletop": "위치안내영상",
     "titlebottom": "SUMMARY",
     "header": "",
     "img": "",
-    "video": "https://www.youtube.com/embed/FltXDFS2F1s?list=UUADDxL5obuilMLPkpi6_SuA",
-    "contentheader": "",
-    "contenttitle": "",
-    "contentsub": "",
-    "contenttitle2": "",
-    "contentsub2": "",
-    "contenttitle3": "",
-    "contentsub3": "",
-    "contenttitle4": "",
-    "contentsub4": "",
-    "contenttitle5": "",
-    "contentsub5": "",
-    "contenttitle6": "",
-    "contentsub6": "",
-    "contenttitle7": "",
-    "contentsub7": ""
+    "video": "https://www.youtube.com/embed/FltXDFS2F1s?list=UUADDxL5obuilMLPkpi6_SuA"
   },
 
   {
     "id": 3,
+    "type": "videoslick",
     "titletop": "홍보영상",
     "titlebottom": "SUMMARY",
-    "header": "",
     "subHeaderOne": "De MER life",
     "subHeaderTwo": "바다와 하늘이 마주하는 공간",
-    "video": "https://www.youtube.com/embed/GDeqTPkIIS8",
-    "contentheader": "",
-    "contenttitle": "",
-    "contentsub": "",
-    "contenttitle2": "",
-    "contentsub2": "",
-    "contenttitle3": "",
-    "contentsub3": "",
-    "contenttitle4": "",
-    "contentsub4": "",
-    "contenttitle5": "",
-    "contentsub5": "",
-    "contenttitle6": "",
-    "contentsub6": "",
-    "contenttitle7": "",
-    "contentsub7": ""
+    "video": "https://www.youtube.com/embed/GDeqTPkIIS8"
   },
 
   {
     "id": 4,
+    "type": "img",
     "titletop": "오시는길",
     "titlebottom": "SUMMARY",
-    "header": "",
-    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png",
-    "contentheader": ""
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png"
+  },
+
+  {
+    "id": 5,
+    "type": "img",
+    "titletop": "단지배치도",
+    "titlebottom": "ARCHITECTURE",
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_layout.jpg",
+    "hieght": "332px",
+    "text": "※ 상기 배치도는 소비자의 이해를 돕기 위해 제작된 것으로 오류가 있을 수 있으니, 자세한 내용은 견본전시관으로 문의하시기 바랍니다. "
+  },
+  {
+    "id": 6,
+    "type": "video",
+    "titletop": "단지안내영상",
+    "titlebottom": "ARCHITECTURE",
+    "video": "https://www.youtube.com/embed/GDeqTPkIIS8"
+  },
+  {
+    "id": 7,
+    "type": "img",
+    "titletop": "동 호수표",
+    "titlebottom": "ARCHITECTURE",
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_dongho.png",
+    "text": "※ 상기 동호수표는 소비자의 이해를 돕기 위해 제작된 것으로 오류가 있을 수 있으니, 자세한 내용은 견본전시관으로 문의하시기 바랍니다."
+  },
+  {
+    "id": 8,
+    "type": "img",
+    "titletop": "커뮤니티",
+    "titlebottom": "ARCHITECTURE",
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_community.png",
+    "hieght": "2720px",
+    "text": "※ 상기 CG는 소비자 이해를 돕기 위한 것으로 실제와 다를 수 있습니다."
+  },
+  {
+    "id": 9,
+    "type": "selector",
+    "titletop": "평면정보",
+    "titlebottom": "SPACE"
+  },
+  {
+    "id": 10,
+    "type": "selectorvideo",
+    "titletop": "세대투어 영상",
+    "titlebottom": "SPACE"
+  },
+  {
+    "id": 11,
+    "type": "Vr",
+    "titletop": "VR",
+    "titlebottom": "SPACE",
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_con.jpg",
+    "hieght": "284px"
+  },
+  {
+    "id": 11,
+    "type": "img",
+    "titletop": "청약 및 계약일정",
+    "titlebottom": "SALES INFO",
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_schedule.png",
+    "hieght": "514px"
   }
 ]
