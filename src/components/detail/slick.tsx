@@ -1,64 +1,88 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 function slick() {
-  const [state, setstate] = useState(-30);
-  const dragev = (e: React.DragEvent<HTMLUListElement>) => {
-    setstate(e.pageX);
+  let slider: any = '';
+  let leftValue: any = 0;
+  let clickval: any = 0;
+
+  useEffect(() => {
+    slider = document.querySelector('ul');
+  }, []);
+
+  const ondrag = (event: React.DragEvent<HTMLUListElement>) => {
+    if (event.pageX === clickval) {
+      slider.style.left = leftValue;
+    }
+    if (event.pageX !== 0) {
+      slider.style.left = event.pageX - clickval - 180 + 'px';
+      leftValue = slider.style.left;
+    }
+  };
+
+  const ondragend = () => {
+    slider.style.left = leftValue + 'px';
+    if (slider.style.left.split('px')[0] > 25) {
+      slider.style.left = 0 + 'px';
+      return;
+    }
+    if (slider.style.left.split('px')[0] < -310) {
+      slider.style.left = 0 + 'px';
+      return;
+    }
+  };
+
+  const clickposition = (e: React.DragEvent<HTMLUListElement>) => {
+    clickval = e.pageX - 180;
   };
 
   return (
     <>
-      <Box>
-        <ImgSlide onDrag={dragev} state={state}>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-          <li>
-            <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-          </li>
-        </ImgSlide>
-      </Box>
+      <ImgSlide
+        onDrag={ondrag}
+        onDragEnd={ondragend}
+        onMouseDown={clickposition}
+      >
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
+        </li>
+        <li>
+          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
+        </li>
+      </ImgSlide>
     </>
   );
 }
 
 export default slick;
 
-const Box = styled.div`
-  width: 640px;
-  height: 300px;
-  background-color: gray;
-  overflow: hidden;
-  padding: 20px 5px;
-`;
-
-const ImgSlide = styled.ul<{ state: number }>`
-  display: flex;
+const ImgSlide = styled.ul`
+  position: relative;
   justify-content: left;
+  /* left: 200px; */
+  display: flex;
   width: 100%;
   list-style: none;
+  margin-top: 100px;
   width: 900px;
-
-  transform: ${props => true && `translate3d(${props.state}px, 0px, 0px)`};
 
   li {
     width: 90px;
