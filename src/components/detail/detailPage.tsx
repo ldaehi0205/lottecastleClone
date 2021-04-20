@@ -10,28 +10,35 @@ import TypeSpaceInfo from './typeSpaceInfo';
 import TypeSpacevideo from './typeSpacevideo';
 import TypeVr from './typeVr';
 
-const detailPage = () => {
+const detailPage = (props: any) => {
   const [state, setstate] = useState([]);
   const [checkType, setcheckType] = useState('');
+  const [a, aset] = useState(0);
+
+  const controlIndex = props.match.params.id;
   let indexNum: string;
-  const controlIndex = 0;
   let typeProve: any;
   useEffect(() => {
-    fetch('data/detaildata.json')
+    fetch('http://localhost:3000/data/detaildata.json')
       .then(res => res.json())
       .then(res => setstate(res));
-  }, []);
+  }, [a]);
+
   useEffect(() => {
     indexNum = state[controlIndex];
     typeProve = indexNum !== undefined && Object.values(indexNum)[1];
     setcheckType(typeProve);
   }, [state]);
 
+  useEffect(() => {
+    aset(props.match.params.id);
+  });
+
   return (
     <>
       {state.map(
         (value: any, index: number) =>
-          index === controlIndex && (
+          index === parseInt(controlIndex) && (
             <PageCenter key={index}>
               <DetailWide>
                 <DetailTitle>
