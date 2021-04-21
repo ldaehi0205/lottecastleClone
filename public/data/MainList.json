@@ -16,29 +16,28 @@
       "text": "설계안내",
       "subText": [
         { "id": 5, "subTitle": "단지배치도" },
-        { "id": 6, "subTitle": "단지안내" },
-        { "id": 7, "subTitle": "영상" },
-        { "id": 8, "subTitle": "동,호수표" },
-        { "id": 9, "subTitle": "커뮤니티" }
+        { "id": 6, "subTitle": "단지안내 영상" },
+        { "id": 7, "subTitle": "동,호수표" },
+        { "id": 8, "subTitle": "커뮤니티" }
       ]
     },
     {
       "title": "space",
       "text": "공간안내",
       "subText": [
-        { "id": 10, "subTitle": "평면정보" },
-        { "id": 11, "subTitle": "세대투어 영상" },
-        { "id": 12, "subTitle": "VR" }
+        { "id": 9, "subTitle": "평면정보" },
+        { "id": 10, "subTitle": "세대투어 영상" },
+        { "id": 11, "subTitle": "VR" }
       ]
     },
     {
       "title": "sales info",
       "text": "분양안내",
       "subText": [
-        { "id": 13, "subTitle": "청약 및 계약일정" },
-        { "id": 14, "subTitle": "청양가이드 영상" },
-        { "id": 15, "subTitle": "분양가안내" },
-        { "id": 16, "subTitle": "분양공고" }
+        { "id": 12, "subTitle": "청약 및 계약일정" },
+        { "id": 13, "subTitle": "청양가이드 영상" },
+        { "id": 14, "subTitle": "분양가안내" },
+        { "id": 15, "subTitle": "분양공고" }
       ]
     },
     {
