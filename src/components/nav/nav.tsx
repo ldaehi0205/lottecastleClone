@@ -29,6 +29,7 @@ export const Nav: React.FC = () => {
 
   const handlePage = (id: number) => {
     history.push(`/detailPage/${id}`);
+    setShowVisible(!showVisible);
   };
 
   return (
