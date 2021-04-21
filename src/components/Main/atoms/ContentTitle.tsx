@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DefaultImage } from '~/components/common';
-
-interface ITitle {
-  title: string;
-}
+import { DefaultImage, ITitle } from '~/components';
 
 export const ContentTitle: React.FC<ITitle> = ({ title }) => {
   return (

@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { IPop } from '~/components/Main';
+
+export interface IPop {
+  check?: boolean;
+  eventFunc: (check: boolean | undefined) => void;
+}
 
 export const PopButton: React.FC<IPop> = ({ children, check, eventFunc }) => {
   return (
@@ -15,9 +19,9 @@ export const PopButton: React.FC<IPop> = ({ children, check, eventFunc }) => {
 };
 
 const PopButtonWrap = styled.button`
+  padding: 0;
   border: none;
   background: none;
-  padding: 0;
   color: #262626;
   font-size: 13px;
   cursor: pointer;

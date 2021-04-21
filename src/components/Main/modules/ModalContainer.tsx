@@ -1,29 +1,33 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { ThumbContext } from '~/components/Main/templates';
-import { SlideContainer } from '~/components/Main/modules';
-import { ControlBox } from '~/components/Main/atoms';
+import { ThumbContext, SlideContainer, SlideImageClass } from '~/components';
+import { ControlBox } from '../atoms';
+import { Tvalue } from './ThumbGrid';
 
 interface IModal {
-  images: string[] | { [key: string]: any };
+  images: Array<SlideImageClass | string>;
 }
 
 export const ModalContainer: React.FC<IModal> = ({ images }) => {
-  const Thumb = useContext<any>(ThumbContext);
-  const { state, action } = Thumb;
+  const Thumb = useContext<Tvalue | null>(ThumbContext);
+  const { state, action } = Thumb as Tvalue;
+  const handleClose = () => {
+    action.setThumbIndex(null);
+  };
+
   return (
     <ModalBox thumbIndex={state.thumbIndex}>
       <SlideContainer
         images={images}
         thumbIndex={state.thumbIndex}
-        setThumbIndex={action.setThumbIndex}
+        handleClose={handleClose}
         closeFunc
       />
     </ModalBox>
   );
 };
 
-const ModalBox = styled.div<{ thumbIndex: null | number }>`
+const ModalBox = styled.div<{ thumbIndex: number | null }>`
   position: absolute;
   top: 0;
   left: 0;
