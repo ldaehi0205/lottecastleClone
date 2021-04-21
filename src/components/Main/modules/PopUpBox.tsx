@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { DefaultImage } from '~/components/common';
 import { mixin } from '~/styles';
-import { PopButton } from '~/components/Main/atoms';
-import { PopLabel } from '~/components/Main/atoms';
-import { IPop } from '~/components/Main';
+import { DefaultImage, PopButton, PopLabel, IPop } from '~/components';
 
 export const PopUpBox: React.FC<IPop> = ({ eventFunc }) => {
   const [check, setCheck] = useState<boolean>(false);
+
   const handleCheck = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setCheck(e.target.checked);
   };
@@ -29,7 +27,10 @@ export const PopUpBox: React.FC<IPop> = ({ eventFunc }) => {
   );
 };
 
-const PopUpContainer = styled.div``;
+const PopUpContainer = styled.div`
+  max-width: 640px;
+  margin: 0 auto;
+`;
 
 const ControlBox = styled.div`
   ${mixin.flexSet('space-between', 'center')};

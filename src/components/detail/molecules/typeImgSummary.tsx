@@ -66,7 +66,6 @@ const DetailArticle = styled.div<{ index: number }>`
   display: flex;
   flex-direction: column;
   margin-top: 100px;
-  width: 100%;
   align-items: center;
 `;
 
@@ -80,14 +79,12 @@ const TextBox = styled.div`
 `;
 
 const DetailHeader = styled.div<{ index: number }>`
-  width: 350px;
-  font-size: 28px;
-  font-weight: 300;
   margin-bottom: 50px;
+  font-size: 26px;
+  font-weight: 300;
 `;
 
 const DetailSection = styled.div<{ index: number }>`
-  width: 492px;
   display: flex;
   flex-direction: column;
 
@@ -104,10 +101,9 @@ const DetailSection = styled.div<{ index: number }>`
 `;
 
 const DetailSectionInfo = styled.div`
-  border-left: 1px solid rgb(200, 200, 200);
   padding-left: 20px;
   margin-top: 80px;
-  width: 452px;
+  border-left: 1px solid rgb(200, 200, 200);
 
   .sectionInfoTitle {
     margin-top: 8px;

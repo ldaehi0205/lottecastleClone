@@ -51,16 +51,15 @@ export default typeSpacevideo;
 const Box = styled.div`
   display: flex;
   flex-direction: column;
-  /* width: 492px; */
 `;
 
 const Ulstyle = styled.ul`
   display: flex;
   justify-content: space-around;
   width: 380px;
-  flex-wrap: wrap;
   padding: 0;
   margin: 50px auto 20px;
+  flex-wrap: wrap;
 `;
 
 const BtnList = styled.li<{ num: number }>`
@@ -78,14 +77,7 @@ const BtnList = styled.li<{ num: number }>`
   cursor: pointer;
 `;
 
-const btnList = [
-  { id: 0, text: '45A' },
-  { id: 1, text: '71B' },
-  { id: 2, text: '90A' },
-];
-
 const SpaceVideo = styled.div`
-  /* width: 100%; */
   margin: auto;
 
   iframe {
@@ -93,3 +85,9 @@ const SpaceVideo = styled.div`
     height: 500px;
   }
 `;
+
+const btnList = [
+  { id: 0, text: '45A' },
+  { id: 1, text: '71B' },
+  { id: 2, text: '90A' },
+];

@@ -14,27 +14,13 @@ const typeImg: React.FC<Props> = ({ index, img, hieght }): JSX.Element => {
         <img src={img} />
       </DetailSection>
       <VrSection>
-        <a
-          href='http://demer.lottecastle.co.kr/m/pages/unit/vr/46a/index.html'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_btn1.jpg' />
-        </a>
-        <a
-          href='http://demer.lottecastle.co.kr/m/pages/unit/vr/46a/index.html'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_btn2.jpg' />
-        </a>
-        <a
-          href='http://demer.lottecastle.co.kr/m/pages/unit/vr/46a/index.html'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_btn3.jpg' />
-        </a>
+        {VrData.map((value: any, index: number) => {
+          return (
+            <a href={value.url} target='_blank' rel='noreferrer' key={index}>
+              <img src={value.imgurl} />
+            </a>
+          );
+        })}
       </VrSection>
       <TextBox>
         <p>
@@ -56,8 +42,6 @@ export default typeImg;
 const DetailArticle = styled.div<{ index: number }>`
   display: flex;
   flex-direction: column;
-  width: 492px;
-  margin: auto;
 `;
 
 const DetailSection = styled.div<{ index: number; hieght: string }>`
@@ -77,6 +61,7 @@ const VrSection = styled.div`
   margin-top: 30px;
 
   img {
+    width: 100%;
     height: 110px;
     margin-top: 20px;
   }
@@ -90,3 +75,21 @@ const TextBox = styled.div`
     text-indent: -12px;
   }
 `;
+
+const VrData = [
+  {
+    id: 0,
+    url: 'http://demer.lottecastle.co.kr/m/pages/unit/vr/46a/index.html',
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_btn1.jpg',
+  },
+  {
+    id: 1,
+    url: 'http://demer.lottecastle.co.kr/m/pages/unit/vr/46a/index.html',
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_btn2.jpg',
+  },
+  {
+    id: 2,
+    url: 'http://demer.lottecastle.co.kr/m/pages/unit/vr/46a/index.html',
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_btn3.jpg',
+  },
+];
