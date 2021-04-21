@@ -10,7 +10,7 @@ export const Nav: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const history = useHistory();
   useEffect(() => {
-    fetch('data/MainList.json')
+    fetch('http://localhost:3000/data/MainList.json')
       .then(res => res.json())
       .then(res => setMenuList(res.results));
   }, []);
