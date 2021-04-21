@@ -43,30 +43,13 @@ function slick() {
         onDragEnd={ondragend}
         onMouseDown={clickposition}
       >
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_map.png'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-        </li>
-        <li>
-          <img src='http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg'></img>
-        </li>
+        {SlickImg.map((value: any, index: number) => {
+          return (
+            <li key={index}>
+              <img src={value.imgurl} />
+            </li>
+          );
+        })}
       </ImgSlide>
     </>
   );
@@ -76,13 +59,11 @@ export default slick;
 
 const ImgSlide = styled.ul`
   position: relative;
-  justify-content: left;
-  /* left: 200px; */
   display: flex;
-  width: 100%;
-  list-style: none;
-  margin-top: 100px;
+  justify-content: left;
   width: 900px;
+  margin-top: 100px;
+  list-style: none;
 
   li {
     width: 90px;
@@ -96,3 +77,42 @@ const ImgSlide = styled.ul`
     }
   }
 `;
+
+const SlickImg = [
+  {
+    id: 0,
+    imgurl:
+      'http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg',
+  },
+  {
+    id: 1,
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_layout.jpg',
+  },
+  {
+    id: 2,
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_con.jpg',
+  },
+  {
+    id: 3,
+    imgurl:
+      'http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg',
+  },
+  {
+    id: 4,
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_con.jpg',
+  },
+  {
+    id: 5,
+    imgurl:
+      'http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg',
+  },
+  {
+    id: 6,
+    imgurl: 'http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_con.jpg',
+  },
+  {
+    id: 7,
+    imgurl:
+      'http://demer.lottecastle.co.kr/m/resources/img/sub/m_overview_view1.jpg',
+  },
+];

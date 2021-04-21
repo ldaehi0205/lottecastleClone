@@ -73,16 +73,15 @@ export default typeSpaceInfo;
 const Space = styled.div`
   display: flex;
   flex-direction: column;
-  width: 492px;
   margin: auto;
 `;
 
 const Ulstyle = styled.ul`
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
   padding: 0;
   margin-top: 50px;
+  flex-wrap: wrap;
 `;
 
 const BtnList = styled.li<{ num: number }>`
@@ -100,8 +99,8 @@ const BtnList = styled.li<{ num: number }>`
   cursor: pointer;
 `;
 const SpaceInfoImg = styled.div`
-  margin-top: 20px;
   width: 100%;
+  margin-top: 20px;
 
   img {
     width: 100%;
