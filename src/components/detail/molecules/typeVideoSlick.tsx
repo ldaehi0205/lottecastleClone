@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Slick from './slick';
+import Slick from '../atoms/slick';
 
 interface Props {
   index: number;
@@ -50,7 +50,6 @@ const DetailHeader = styled.div<{ index: number }>`
 `;
 
 const DetailSection = styled.div<{ index: number }>`
-  width: 492px;
   display: flex;
   flex-direction: column;
 
@@ -61,7 +60,6 @@ const DetailSection = styled.div<{ index: number }>`
 
   iframe {
     position: relative;
-    width: 130%;
     height: 400px;
   }
 `;
