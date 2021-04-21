@@ -54,7 +54,7 @@ const ListTitle = styled.div<{
   color: ${props =>
     props.count === props.activeIndex ? '#b7956e' : '#FFFFFF'};
   border: 600;
-  padding-top: 50px;
+  margin-top: 50px;
   font-size: 26px;
   text-transform: uppercase;
 `;

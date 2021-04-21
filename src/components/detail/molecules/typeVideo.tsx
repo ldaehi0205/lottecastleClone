@@ -10,11 +10,7 @@ const typeVideo: React.FC<Props> = (props: any) => {
   return (
     <DetailArticle index={props.index}>
       <DetailSection index={props.index}>
-        <iframe
-          src={props.video}
-          title='YouTube video player'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-        />
+        <iframe src={props.video} />
       </DetailSection>
     </DetailArticle>
   );
@@ -25,19 +21,20 @@ export default typeVideo;
 const DetailArticle = styled.div<{ index: number }>`
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
   width: 100%;
+  margin-top: 100px;
   align-items: center;
 `;
 
 const DetailSection = styled.div<{ index: number }>`
-  width: 492px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: auto;
 
   iframe {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 350px;
   }
 `;

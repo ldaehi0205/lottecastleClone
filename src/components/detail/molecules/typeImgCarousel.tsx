@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Imgcarousel from './imgcarousel';
+import Imgcarousel from '../atoms/imgcarousel';
 
 interface Props {
   index: number;
@@ -65,7 +65,6 @@ const DetailHeader = styled.div<{ index: number }>`
 `;
 
 const DetailSection = styled.div<{ index: number }>`
-  width: 452px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,10 +76,9 @@ const DetailSection = styled.div<{ index: number }>`
 `;
 
 const DetailSectionInfo = styled.div`
-  border-left: 1px solid rgb(200, 200, 200);
-  padding-left: 20px;
   margin-top: 80px;
-  width: 452px;
+  padding-left: 20px;
+  border-left: 1px solid rgb(200, 200, 200);
 
   .sectionInfoTitle {
     margin-top: 8px;

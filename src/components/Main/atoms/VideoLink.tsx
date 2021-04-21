@@ -1,15 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DefaultImage } from '~/components/common';
+import { DefaultImage } from '~/components';
 
-interface IVideo {
-  video: {
-    image: string;
-    link: string;
-  };
-}
-
-export const IntroVideo: React.FC<IVideo> = ({ video: { image, link } }) => {
+export const VideoLink: React.FC<{ video: string[] }> = ({ video }) => {
+  const [link, image] = video;
   return (
     <VideoBox href={link} target='_blank'>
       <DefaultImage src={image} alt='배너 영상 이미지' />
@@ -17,6 +11,6 @@ export const IntroVideo: React.FC<IVideo> = ({ video: { image, link } }) => {
   );
 };
 
-const VideoBox = styled.a`
+export const VideoBox = styled.a`
   display: block;
 `;

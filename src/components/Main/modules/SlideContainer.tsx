@@ -1,68 +1,118 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { DefaultImage } from '~/components/common';
-import { SlideBtns, ContentTitle } from '~/components/Main/atoms';
+import {
+  DefaultImage,
+  SlideBtns,
+  ContentTitle,
+  SlideImageClass,
+  VideoLink,
+} from '~/components';
+import { VideoBox } from '../atoms/VideoLink';
 
-interface ISlide {
-  images: any;
+export interface ISlide {
+  auto?: boolean;
+  images: Array<SlideImageClass | string>;
   title?: string;
   thumbIndex?: null | number;
   closeFunc?: boolean;
-  setThumbIndex?: any;
+  handleClose?: () => void;
 }
 
 export const SlideContainer: React.FC<ISlide> = ({
+  auto,
   title,
   images,
   thumbIndex,
   closeFunc,
-  setThumbIndex,
+  handleClose,
 }) => {
-  const [leftValue, setLeftValue] = useState(0);
-  const [moveSize, setMoveSize] = useState(0);
+  const [leftValue, setLeftValue] = useState<number>(0);
+  const [moveSize, setMoveSize] = useState<number>(0);
+  const [oldStamp, setOldStamp] = useState<number>(0);
   const SlideBox = useRef<HTMLDivElement>(null);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (SlideBox.current) {
+    const currentStamp = Number(e.timeStamp);
+
+    if (oldStamp === 0) setOldStamp(currentStamp);
+    if (SlideBox.current && currentStamp - oldStamp >= 1000) {
+      const SlideListBox = SlideBox.current.querySelector('ul') as HTMLElement;
       const clickType: string = e.currentTarget.name;
-      const maxLeftValue: number =
-        SlideBox.current.offsetWidth * images.length - 1;
+      const maxLeftValue: number = SlideBox.current.offsetWidth * images.length;
       const nowLeftValue: number =
         leftValue + (clickType === 'prev' ? moveSize : moveSize * -1);
-      const moveCondition =
-        nowLeftValue > 0
-          ? false
-          : nowLeftValue * -1 > maxLeftValue
-          ? false
-          : true;
-      moveCondition && setLeftValue(nowLeftValue);
-    }
-  };
 
-  const handleClose = () => {
-    setThumbIndex(null);
-  };
+      setLeftValue(nowLeftValue);
+      setOldStamp(currentStamp);
+      SlideListBox.style.transition = 'all 0.5s';
 
-  const handleSliderResize = () => {
-    if (SlideBox.current && SlideBox.current.offsetWidth < 640) {
-      const nowMovesize: number = SlideBox.current.offsetWidth;
-      setMoveSize(nowMovesize);
-      leftValue !== 0 && setLeftValue(0);
+      setTimeout(() => {
+        SlideListBox.style.removeProperty('transition');
+        if (nowLeftValue * -1 > maxLeftValue) setLeftValue(moveSize * -1);
+        else if (nowLeftValue >= 0) setLeftValue(maxLeftValue * -1);
+      }, 500);
     }
   };
 
   useEffect(() => {
-    window.addEventListener('resize', handleSliderResize);
-    return () => window.removeEventListener('resize', handleSliderResize);
+    if (SlideBox.current && typeof thumbIndex === 'number') {
+      const currentThumbPosition = -moveSize * (thumbIndex + 1);
+      setLeftValue(currentThumbPosition);
+    }
+  }, [thumbIndex]);
+
+  useEffect(() => {
+    if (SlideBox.current && auto) {
+      const maxLeftValue: number = SlideBox.current.offsetWidth * images.length;
+      const SlideListBox = SlideBox.current.querySelector('ul') as HTMLElement;
+      SlideListBox.style.transition = 'all 0.5s';
+
+      const autoPlay = setTimeout(() => {
+        setLeftValue(leftValue - moveSize);
+        if (leftValue * -1 >= maxLeftValue) {
+          setTimeout(() => {
+            SlideListBox.style.removeProperty('transition');
+            setLeftValue(moveSize * -1);
+          }, 1000);
+        }
+      }, 3000);
+
+      return () => {
+        clearTimeout(autoPlay);
+      };
+    }
   }, [leftValue]);
+
+  const handleSliderResize = () => {
+    if (SlideBox.current) {
+      const nowMovesize: number = SlideBox.current.offsetWidth;
+      setMoveSize(nowMovesize);
+      setLeftValue(nowMovesize * -1);
+    }
+  };
 
   useEffect(() => {
     if (SlideBox.current) {
-      const nowMoveSize = SlideBox.current.offsetWidth;
+      const SlideWrap = SlideBox.current.querySelector('ul') as HTMLElement;
+      const nowMoveSize = SlideWrap.offsetWidth;
+      const CloneWrap = SlideWrap.cloneNode(true);
+      const CloneFirst = CloneWrap.firstChild as ChildNode;
+      const CloneLast = CloneWrap.lastChild as ChildNode;
+      SlideWrap.append(CloneFirst);
+      SlideWrap.prepend(CloneLast);
+
+      setLeftValue(SlideBox.current.offsetWidth * -1);
       setMoveSize(nowMoveSize);
-      thumbIndex && setLeftValue(nowMoveSize * thumbIndex * -1);
+
+      window.addEventListener('resize', handleSliderResize);
+
+      return () => {
+        SlideWrap.removeChild(CloneFirst);
+        SlideWrap.removeChild(CloneLast);
+        window.removeEventListener('resize', handleSliderResize);
+      };
     }
-  }, [thumbIndex]);
+  }, []);
 
   return (
     <>
@@ -72,31 +122,36 @@ export const SlideContainer: React.FC<ISlide> = ({
         handleClose={handleClose}
         closeFunc={closeFunc}
       />
-      <div style={{ width: '100%', overflow: 'hidden' }} ref={SlideBox}>
+      <div style={{ width: '100%' }} ref={SlideBox}>
         <SlideListWrap leftValue={leftValue}>
-          {images.map((url: any, index: number) => {
-            const urlCondition = url.constructor === Object ? true : false;
-            const { title, video, slide_img, slide_txt } = url;
+          {images.map((url: SlideImageClass | string, index: number) => {
+            const urlCondition = typeof url === 'object' ? true : false;
+            const {
+              title,
+              video,
+              slide_img,
+              slide_txt,
+            } = url as SlideImageClass;
+            const bayImage = url as string;
+
             return (
               <SlideListItem key={index}>
                 {urlCondition ? (
                   <>
                     <TitleBox title={title}>
                       <DefaultImage
-                        src={title === undefined ? slide_img : title}
+                        src={title ? title : slide_img}
                         alt='슬라이드 이미지'
                       />
                     </TitleBox>
                     {video ? (
-                      <VideoBox href={video.link} target='_blank'>
-                        <DefaultImage src={video.image} alt='슬라이드 이미지' />
-                      </VideoBox>
+                      <VideoLink video={video} />
                     ) : (
                       <DefaultImage src={slide_txt} alt='슬라이드 이미지' />
                     )}
                   </>
                 ) : (
-                  <DefaultImage src={url} alt='슬라이드 이미지' />
+                  <DefaultImage src={bayImage} alt='슬라이드 이미지' />
                 )}
               </SlideListItem>
             );
@@ -111,17 +166,15 @@ const SlideListWrap = styled.ul<{ leftValue: number }>`
   display: flex;
   position: relative;
   left: ${props => props.leftValue}px;
-  transition: all 0.5s;
 `;
 
 const SlideListItem = styled.li`
   min-width: 100%;
+  ${VideoBox} {
+    padding: 0 5%;
+  }
 `;
 
 const TitleBox = styled.div<{ title: string }>`
   padding: ${props => (props.title ? '0 5% 8%' : '0')};
-`;
-const VideoBox = styled.a`
-  display: block;
-  padding: 0 5%;
 `;
