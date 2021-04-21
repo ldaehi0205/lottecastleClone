@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { mixin } from '~/styles';
-import { ILabel } from '~/components/Main/MainInterface';
+
+export interface ILabel {
+  check: boolean;
+  CheckEvent: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 export const PopLabel: React.FC<ILabel> = ({ children, check, CheckEvent }) => {
   return (

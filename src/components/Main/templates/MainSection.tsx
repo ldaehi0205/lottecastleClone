@@ -1,13 +1,13 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ControlBox } from '~/components/Main/atoms';
+import { ControlBox } from '~/components';
 
-interface type {
+interface IMainType {
   layout: number;
   background?: string;
 }
 
-export const MainSection: React.FC<type> = ({
+export const MainSection: React.FC<IMainType> = ({
   layout,
   background,
   children,
@@ -19,7 +19,7 @@ export const MainSection: React.FC<type> = ({
   );
 };
 
-const SectionContainer = styled.section<type>`
+const SectionContainer = styled.section<IMainType>`
   ${props => {
     const { background } = props;
     if (props.layout === 1) {

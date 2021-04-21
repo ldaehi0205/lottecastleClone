@@ -1,11 +1,9 @@
-export interface IPop {
-  check?: boolean;
-  eventFunc: (check: boolean | undefined) => void;
+export interface ITitle {
+  title: string;
 }
-export interface IThumb {
+export interface IVideo extends ITitle {
+  video: string[];
+}
+export interface IThumb extends IVideo {
   thumb_list: string[];
-}
-export interface ILabel {
-  check: boolean;
-  CheckEvent: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

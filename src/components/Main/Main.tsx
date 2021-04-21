@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { withCookies, Cookies, ReactCookieProps } from 'react-cookie';
 import {
   MainSection,
   ThumbGrid,
   ThumbProvider,
   PopUpWrap,
-} from '~/components/Main/templates';
-import { ContentTitle } from './atoms';
-import { IntroImg, IntroVideo } from './modules';
-import { PopUpBox } from './modules/PopUpBox';
-import { SlideContainer } from './modules/SlideContainer';
-import { ModalContainer } from './templates/ModalContainer';
-import { withCookies, Cookies, ReactCookieProps } from 'react-cookie';
+  ContentTitle,
+  PopUpBox,
+  SlideContainer,
+  ModalContainer,
+  IVideo,
+  IThumb,
+  FadeInOutBox,
+} from '~/components';
 import PopUpDC from '~/components/common/PopUpDC';
 
-interface IMainData {
-  [key: string]: any;
+interface IMain extends IThumb {
+  intro: string;
+  background: string;
+  slide_images: Array<SlideImageClass | string>;
+  thumb_list: string[];
 }
-interface MainProps extends ReactCookieProps {}
 
-const Main = (props: MainProps) => {
-  const [mainData, setMainData] = useState<IMainData>({});
+export interface SlideImageClass extends IVideo {
+  slide_img: string;
+  slide_txt: string;
+}
+
+const Main = (props: ReactCookieProps) => {
+  const [mainData, setMainData] = useState<IMain[]>();
   const [popActive, setPopActive] = useState<boolean>(false);
   const [hasCookies, setHasCookies] = useState<boolean>(false);
   const cookies: Cookies | undefined = props.cookies;
@@ -47,17 +56,15 @@ const Main = (props: MainProps) => {
 
   const handlePop = (check: boolean | undefined): void => {
     if (cookies && check) {
-      const expire: Date = new Date(Date.now() + 10000);
+      const expire: Date = new Date(Date.now() + 1000000);
       cookies.set(PopUpDC.COOKIE_VALUE, true, { path: '/', expires: expire });
     }
     setPopActive(false);
   };
 
-  const sectionList: string[] = Object.keys(mainData);
   return (
     <MainContainer>
-      {sectionList?.map((content, index) => {
-        const contentData = mainData[content];
+      {mainData?.map((data, index) => {
         const {
           intro,
           video,
@@ -65,16 +72,17 @@ const Main = (props: MainProps) => {
           background,
           thumb_list,
           slide_images,
-        } = contentData;
+        } = data;
         return (
           <MainSection key={index} layout={index} background={background}>
             {index === 0 ? (
-              <>
-                <IntroImg intro={intro} />
-                <IntroVideo video={video} />
-              </>
+              <FadeInOutBox intro={intro} video={video} />
             ) : index <= 2 ? (
-              <SlideContainer title={title} images={slide_images} />
+              <SlideContainer
+                title={title}
+                images={slide_images}
+                auto={index === 1 ? true : false}
+              />
             ) : (
               <ThumbProvider>
                 <ContentTitle title={title} />
