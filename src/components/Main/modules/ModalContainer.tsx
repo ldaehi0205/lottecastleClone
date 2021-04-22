@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { ThumbContext, SlideContainer, SlideImageClass } from '~/components';
+import { SlideContainer } from '~/components/Main/modules';
 import { ControlBox } from '~/components/Main/atoms';
-import { Tvalue } from './ThumbGrid';
+import { SlideImageClass } from '~/components/Main';
+import { ThumbContext, Tvalue } from './ThumbGrid';
 
 interface IModal {
   images: Array<SlideImageClass | string>;
