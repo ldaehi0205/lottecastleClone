@@ -122,7 +122,7 @@ export const SlideContainer: React.FC<ISlide> = ({
         handleClose={handleClose}
         closeFunc={closeFunc}
       />
-      <div style={{ width: '100%' }} ref={SlideBox}>
+      <div style={{ width: '100%', overflow: 'hidden' }} ref={SlideBox}>
         <SlideListWrap leftValue={leftValue}>
           {images.map((url: SlideImageClass | string, index: number) => {
             const urlCondition = typeof url === 'object' ? true : false;
