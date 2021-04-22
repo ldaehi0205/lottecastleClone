@@ -55,8 +55,8 @@ export const SlideContainer: React.FC<ISlide> = ({
   };
 
   useEffect(() => {
-    if (SlideBox.current && thumbIndex) {
-      const currentThumbPosition = leftValue + moveSize * thumbIndex * -1;
+    if (SlideBox.current && typeof thumbIndex === 'number') {
+      const currentThumbPosition = -moveSize * (thumbIndex + 1);
       setLeftValue(currentThumbPosition);
     }
   }, [thumbIndex]);
@@ -122,7 +122,7 @@ export const SlideContainer: React.FC<ISlide> = ({
         handleClose={handleClose}
         closeFunc={closeFunc}
       />
-      <div style={{ width: '100%', overflow: 'hidden' }} ref={SlideBox}>
+      <div style={{ width: '100%' }} ref={SlideBox}>
         <SlideListWrap leftValue={leftValue}>
           {images.map((url: SlideImageClass | string, index: number) => {
             const urlCondition = typeof url === 'object' ? true : false;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { ThumbContext, SlideContainer, SlideImageClass } from '~/components';
-import { ControlBox } from '../atoms';
+import { ControlBox } from '~/components/Main/atoms';
 import { Tvalue } from './ThumbGrid';
 
 interface IModal {
