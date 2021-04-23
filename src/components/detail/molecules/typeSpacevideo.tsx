@@ -56,7 +56,7 @@ const Box = styled.div`
 const Ulstyle = styled.ul`
   display: flex;
   justify-content: space-around;
-  width: 380px;
+  width: 100%;
   padding: 0;
   margin: 50px auto 20px;
   flex-wrap: wrap;
@@ -65,7 +65,7 @@ const Ulstyle = styled.ul`
 const BtnList = styled.li<{ num: number }>`
   display: flex;
   justify-content: center;
-  width: 116px;
+  width: 30%;
   height: 32px;
   padding: 0.4rem 0;
   margin-bottom: 10px;
@@ -78,10 +78,8 @@ const BtnList = styled.li<{ num: number }>`
 `;
 
 const SpaceVideo = styled.div`
-  margin: auto;
-
   iframe {
-    width: 492px;
+    width: 100%;
     height: 500px;
   }
 `;

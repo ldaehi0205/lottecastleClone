@@ -79,7 +79,6 @@ const Space = styled.div`
 const Ulstyle = styled.ul`
   display: flex;
   justify-content: space-around;
-  padding: 0;
   margin-top: 50px;
   flex-wrap: wrap;
 `;
@@ -87,7 +86,7 @@ const Ulstyle = styled.ul`
 const BtnList = styled.li<{ num: number }>`
   display: flex;
   justify-content: center;
-  width: 116px;
+  width: 24%;
   height: 32px;
   padding: 0.4rem 0;
   margin-bottom: 10px;
@@ -95,7 +94,7 @@ const BtnList = styled.li<{ num: number }>`
   border-radius: 1.2rem;
   color: ${props => (props.value === props.num ? 'white' : '#8d6f4b')};
   background-color: ${props => props.value === props.num && '#8d6f4b'};
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
 `;
 const SpaceInfoImg = styled.div`

@@ -78,7 +78,6 @@
     "titletop": "단지배치도",
     "titlebottom": "ARCHITECTURE",
     "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_layout.jpg",
-    "hieght": "332px",
     "text": "※ 상기 배치도는 소비자의 이해를 돕기 위해 제작된 것으로 오류가 있을 수 있으니, 자세한 내용은 견본전시관으로 문의하시기 바랍니다. "
   },
   {
@@ -102,7 +101,6 @@
     "titletop": "커뮤니티",
     "titlebottom": "ARCHITECTURE",
     "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_community.png",
-    "hieght": "2720px",
     "text": "※ 상기 CG는 소비자 이해를 돕기 위한 것으로 실제와 다를 수 있습니다."
   },
   {
@@ -122,15 +120,13 @@
     "type": "Vr",
     "titletop": "VR",
     "titlebottom": "SPACE",
-    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_con.jpg",
-    "hieght": "284px"
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_vr_con.jpg"
   },
   {
     "id": 12,
     "type": "img",
     "titletop": "청약 및 계약일정",
     "titlebottom": "SALES INFO",
-    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_schedule.png",
-    "hieght": "514px"
+    "img": "http://demer.lottecastle.co.kr/m/resources/img/sub/m_schedule.png"
   }
 ]

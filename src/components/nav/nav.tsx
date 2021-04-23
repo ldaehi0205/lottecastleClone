@@ -24,7 +24,7 @@ export const Nav: React.FC = () => {
   };
 
   const handleHome = () => {
-    window.location.replace('/main');
+    window.location.replace('/');
   };
 
   const handlePage = (id: number) => {
