@@ -4,19 +4,13 @@ import styled from 'styled-components';
 interface Props {
   index: number;
   img: string;
-  hieght: string;
   text: string;
 }
 
-const typeImg: React.FC<Props> = ({
-  index,
-  img,
-  hieght,
-  text,
-}): JSX.Element => {
+const typeImg: React.FC<Props> = ({ index, img, text }): JSX.Element => {
   return (
     <DetailArticle index={index}>
-      <DetailSection index={index} hieght={hieght}>
+      <DetailSection>
         <img src={img} />
       </DetailSection>
       {text !== '' && <p>{text}</p>}
@@ -40,12 +34,11 @@ const DetailArticle = styled.div<{ index: number }>`
   }
 `;
 
-const DetailSection = styled.div<{ index: number; hieght: string }>`
+const DetailSection = styled.div`
   display: flex;
   flex-direction: column;
 
   img {
     width: 100%;
-    height: ${props => props.index && `${props.hieght}`};
   }
 `;

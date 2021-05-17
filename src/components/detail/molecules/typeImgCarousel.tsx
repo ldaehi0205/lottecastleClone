@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Imgcarousel from '../atoms/imgcarousel';
 
@@ -18,8 +18,13 @@ interface Props {
 }
 
 const typeImgCarousel: React.FC<Props> = (props: any) => {
+  const [stateWidth, setstateWidth] = useState<number>(0);
+  useEffect(() => {
+    const wideRange = document.getElementById('1') as HTMLElement;
+    setstateWidth(wideRange.offsetWidth);
+  }, [stateWidth]);
   return (
-    <div>
+    <div id='1'>
       <DetailArticle index={props.index}>
         <DetailHeader index={props.index}>{props.header}</DetailHeader>
         <DetailSection index={props.index}>
